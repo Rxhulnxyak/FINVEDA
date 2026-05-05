@@ -1,0 +1,24 @@
+# Backend
+django==4.2.*
+djangorestframework
+django-cors-headers
+drf-spectacular
+psycopg2-binary
+sqlalchemy
+pandas
+numpy
+scipy
+scikit-learn
+matplotlib
+seaborn
+celery
+redis
+python-dotenv
+
+# Frontend (Dev)
+# node, npm are required
+
+# ETL/Analytics
+jupyter
+openpyxl
+regex

@@ -1,0 +1,44 @@
+{
+  "name": "FINVEDA Premium",
+  "dataColors": [
+    "#4F6EF7",
+    "#10B981",
+    "#EF4444",
+    "#F59E0B",
+    "#3B82F6",
+    "#A78BFA",
+    "#F472B6",
+    "#FB923C"
+  ],
+  "background": "#0A0F1E",
+  "foreground": "#FFFFFF",
+  "tableAccent": "#4F6EF7",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "show": true,
+            "color": { "solid": { "color": "#1A1F2E" } },
+            "transparency": 50
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": { "solid": { "color": "#2D3748" } },
+            "radius": 12
+          }
+        ],
+        "title": [
+          {
+            "show": true,
+            "fontFamily": "Outfit",
+            "fontSize": 14,
+            "fontColor": { "solid": { "color": "#FFFFFF" } }
+          }
+        ]
+      }
+    }
+  }
+}
