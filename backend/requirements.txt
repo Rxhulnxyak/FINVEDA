@@ -16,6 +16,7 @@ redis
 python-dotenv
 whitenoise
 gunicorn
+dj-database-url
 
 # Frontend (Dev)
 # node, npm are required

@@ -7,7 +7,7 @@
   },
   "deploy": {
     "startCommand": "python backend/manage.py collectstatic --no-input && sh backend/entrypoint.sh",
-    "healthcheckPath": "/api/v1/ingest/health/",
+    "healthcheckPath": "/",
     "healthcheckTimeout": 120,
     "restartPolicyType": "ON_FAILURE"
   }

@@ -9,11 +9,8 @@ fi
 if [ -n "$DATABASE_URL" ]; then
   echo "Using DATABASE_URL for connection"
 else
-  echo "Waiting for local postgres..."
-  while ! nc -z db 5432; do
-    sleep 0.1
-  done
-  echo "PostgreSQL started"
+  echo "WARNING: DATABASE_URL is not set! Ensure you have added a Postgres service to your Railway project."
+  echo "The app will attempt to start using a local SQLite fallback for testing."
 fi
 
 # Apply database migrations
