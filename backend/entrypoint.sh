@@ -13,9 +13,15 @@ else
   echo "The app will attempt to start using a local SQLite fallback for testing."
 fi
 
-# Apply database migrations
+# Apply database migrations with retries
 echo "Applying migrations..."
-python manage.py migrate
+for i in 1 2 3 4 5; do
+  python manage.py migrate --no-input && break || sleep 5
+done
+
+# Collect static files
+echo "Collecting static files..."
+python manage.py collectstatic --no-input
 
 # Run data ingestion in the background to avoid healthcheck timeouts
 (

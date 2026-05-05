@@ -6,9 +6,8 @@
     "context": "."
   },
   "deploy": {
-    "startCommand": "python backend/manage.py collectstatic --no-input && sh backend/entrypoint.sh",
     "healthcheckPath": "/",
-    "healthcheckTimeout": 120,
+    "healthcheckTimeout": 300,
     "restartPolicyType": "ON_FAILURE"
   }
 }
