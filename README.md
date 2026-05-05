@@ -1,79 +1,335 @@
-# FinVeda: Enterprise Financial Intelligence Platform
+# 💹 FinVeda
 
-FinVeda is a production-grade financial analysis platform designed to ingest, process, and visualize complex financial data for Nifty 100 companies. Built with a robust Django/React stack and a custom ETL pipeline, it translates raw SQL dumps into actionable financial insights.
+### *Enterprise Financial Intelligence & Analytics Platform*
 
-## 🚀 Key Features
+<p align="center">
+  <img src="https://img.shields.io/badge/Backend-Django%20REST-success?style=for-the-badge&logo=django"/>
+  <img src="https://img.shields.io/badge/Frontend-React%20%2B%20Vite-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Database-PostgreSQL-blue?style=for-the-badge&logo=postgresql"/>
+  <img src="https://img.shields.io/badge/Analytics-Financial%20Modeling-00C853?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Architecture-Enterprise-purple?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/UI-Glassmorphism-cyan?style=for-the-badge"/>
+</p>
 
-- **Automated ETL Pipeline**: Custom regex-based SQL parser to extract data from legacy MySQL dumps.
-- **Financial Modeling**: Support for multi-year Profit & Loss statements, Balance Sheets, and Cash Flow analysis.
-- **Sector Analytics**: Hierarchical geographic and sector-based grouping for comparative analysis.
-- **Modern Dashboard**: Glassmorphic React interface with high-performance metric cards and status indicators.
-- **Agentic Integration**: Compatible with the Kolimarii AI Assistant for voice-activated financial queries.
+<p align="center">
+  <b>
+  A production-grade financial intelligence platform built to ingest, process, model, and visualize complex financial datasets for Nifty 100 companies — transforming raw SQL archives into actionable business intelligence.
+  </b>
+</p>
 
-## 🛠️ Architecture
+---
 
-### Backend (Django REST Framework)
-- **Modular Design**: Separate apps for `companies`, `financials`, and `analytics`.
-- **Advanced Serialization**: Deep-nested serializers to provide comprehensive company snapshots in a single API call.
-- **Custom Management Commands**: Built-in CLI tools for bulk data ingestion.
+# ✨ Overview
 
-### Frontend (React + Vite)
-- **Design System**: Built on `DM Sans` and `Outfit` typography with a custom glassmorphism CSS engine.
-- **State Management**: Reactive data fetching with Axios and Hooks.
+**FinVeda** is an **enterprise-scale financial analysis platform** designed for deep structured intelligence over company fundamentals.
 
-### Data Layer (ETL)
-1. **01_Extraction**: Raw SQL dump parsing to CSV.
-2. **02_Transformation**: Data cleaning, numeric standardization, and model mapping.
-3. **03_Loading**: Automated DB ingestion via Django ORM.
+Built using a modern **Django + React architecture**, FinVeda provides:
 
-## 📦 Installation & Setup
+📊 rich financial reporting
+📈 multi-year statement analysis
+🏢 sector-level benchmarking
+🌍 geographic segmentation
+⚙ automated ETL pipelines
+🧠 AI-assisted financial querying
 
-### Prerequisites
-- Python 3.10+
-- Node.js & npm
-- PostgreSQL (or SQLite for dev)
+It bridges **raw legacy datasets** and **executive-grade analytics dashboards**.
 
-### Backend Setup
-1. Navigate to the backend directory:
-   ```powershell
-   cd backend
-   ```
-2. Install dependencies:
-   ```powershell
-   pip install -r ../requirements.txt
-   ```
-3. Initialize the database:
-   ```powershell
-   python manage.py migrate
-   ```
+---
 
-### Data Ingestion
-Run the ETL pipeline from the root directory:
-```powershell
+# 🎯 Core Highlights
+
+## ⚙️ Automated ETL Engine
+
+A custom financial ingestion pipeline built for scale:
+
+✔ Regex-powered SQL parsing
+✔ Legacy MySQL dump extraction
+✔ Automated CSV generation
+✔ Data normalization
+✔ Numeric standardization
+✔ Schema mapping
+✔ ORM-driven ingestion
+✔ Bulk-load processing
+
+---
+
+## 📈 Financial Modeling Suite
+
+Deep financial statement support:
+
+### Profit & Loss
+
+* Revenue growth
+* EBITDA trends
+* Net profit margins
+* EPS analysis
+* Cost structure breakdown
+
+### Balance Sheet
+
+* Assets / liabilities analysis
+* Capital structure
+* Equity trends
+* Debt monitoring
+* Working capital tracking
+
+### Cash Flow
+
+* Operating cash flow
+* Investing activity
+* Financing activity
+* Free cash flow metrics
+* Cash sustainability analysis
+
+---
+
+## 🏢 Sector Intelligence
+
+Comparative enterprise analytics:
+
+* sector clustering
+* industry benchmarking
+* performance grouping
+* region-based segmentation
+* hierarchical classifications
+* macro comparative views
+
+Executive-ready business intelligence.
+
+---
+
+## 🎨 Premium Dashboard Experience
+
+Modern UI built for enterprise users:
+
+✨ Glassmorphism design engine
+✨ Smart financial cards
+✨ KPI indicators
+✨ smooth transitions
+✨ responsive design
+✨ elegant dark-mode palette
+✨ executive dashboard UX
+
+Typography stack:
+
+> **DM Sans** + **Outfit**
+
+Visual identity:
+
+> clean • premium • fintech • modern
+
+---
+
+# 🏗 Enterprise Architecture
+
+```text
+Raw SQL Dumps
+     │
+     ▼
+┌──────────────────────┐
+│  Extraction Layer    │
+│ Regex SQL Parser     │
+└─────────┬────────────┘
+          │
+          ▼
+┌──────────────────────┐
+│ Transformation Layer │
+│ Clean + Normalize    │
+└─────────┬────────────┘
+          │
+          ▼
+┌──────────────────────┐
+│ Loading Layer        │
+│ Django ORM           │
+└─────────┬────────────┘
+          │
+          ▼
+┌──────────────────────┐
+│ Financial Models     │
+│ P&L / BS / CF        │
+└─────────┬────────────┘
+          │
+          ▼
+┌──────────────────────┐
+│ Analytics Engine     │
+│ Sector + KPI Layer   │
+└─────────┬────────────┘
+          │
+          ▼
+┌──────────────────────┐
+│ React Dashboard      │
+│ Visualization UI     │
+└──────────────────────┘
+```
+
+---
+
+# 🧱 Technology Stack
+
+## Backend
+
+* Django
+* Django REST Framework
+* Python
+* PostgreSQL / SQLite
+* Custom Management Commands
+
+## Frontend
+
+* React
+* Vite
+* Axios
+* Hooks
+* Glassmorphism CSS Engine
+
+## Data Engineering
+
+* Regex Parsers
+* CSV Pipelines
+* Data Cleaning
+* Financial Mapping
+* ETL Automation
+
+## AI Integration
+
+Compatible with:
+
+> **Kolimarii Neural Assistant**
+
+Voice query example:
+
+> *"Computer, compare banking sector cash flow growth over 5 years."*
+
+FinVeda responds intelligently.
+
+---
+
+# 📂 Project Structure
+
+```bash
+FinVeda/
+│
+├── backend/
+│   ├── companies/
+│   ├── financials/
+│   ├── analytics/
+│   └── manage.py
+│
+├── frontend/
+│   ├── src/
+│   ├── components/
+│   ├── pages/
+│   └── vite.config.js
+│
+├── etl/
+│   ├── 01_extract_from_mysql.py
+│   ├── 02_clean_and_transform.py
+│   └── loaders/
+│
+├── requirements.txt
+└── README.md
+```
+
+---
+
+# 🚀 Installation
+
+## Backend
+
+```bash
+cd backend
+pip install -r ../requirements.txt
+python manage.py migrate
+```
+
+---
+
+## Run ETL
+
+```bash
 python etl/01_extract_from_mysql.py
 python etl/02_clean_and_transform.py
 python backend/manage.py load_financials
 ```
 
-### Frontend Setup
-1. Navigate to the frontend directory:
-   ```powershell
-   cd frontend
-   ```
-2. Install packages:
-   ```powershell
-   npm install
-   ```
-3. Launch the dashboard:
-   ```powershell
-   npm run dev
-   ```
+---
 
-## 📈 Usage
-Once running, navigate to `http://localhost:5173` to explore the financial dashboard. Use the search bar to filter companies by Symbol or Sector.
+## Frontend
 
-## 🛡️ Security
-FinVeda implements standard Django security practices, including CORS headers for frontend communication and environment-based configuration for API keys.
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Launch:
+
+```text
+http://localhost:5173
+```
 
 ---
-*Built as an enterprise-grade fintech portfolio piece.*
+
+# 📊 Features for Analysts
+
+✔ Company search
+✔ Symbol lookup
+✔ Sector filtering
+✔ Financial trend comparison
+✔ Historical statements
+✔ KPI visualization
+✔ Growth tracking
+✔ Ratio analytics
+✔ Executive insights
+
+---
+
+# 🔐 Security
+
+Enterprise-ready practices:
+
+* CORS configuration
+* environment-based secrets
+* secure API separation
+* modular services
+* clean config isolation
+* scalable deployment architecture
+
+---
+
+# 🚀 Future Roadmap
+
+* [ ] AI investment assistant
+* [ ] Financial forecasting engine
+* [ ] Portfolio recommendation system
+* [ ] Risk scoring
+* [ ] Sentiment analysis
+* [ ] Earnings-call summarization
+* [ ] PDF export reports
+* [ ] Institutional analytics mode
+
+---
+
+# 👨‍💻 Author
+
+## Rahul
+
+**Full Stack Developer • AI Engineer • Data Systems Builder • FinTech Architect**
+
+> Building intelligent infrastructure for modern financial systems.
+
+---
+
+# ⭐ Support
+
+If FinVeda impressed you:
+
+⭐ Star the repository
+🍴 Fork it
+🧠 Build on top of it
+
+---
+
+<p align="center">
+<b>FinVeda — Turning Financial Data into Strategic Intelligence 💹</b>
+</p>
