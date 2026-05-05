@@ -64,6 +64,10 @@ class CompanyViewSet(viewsets.ModelViewSet):
 
 @method_decorator(csrf_exempt, name='dispatch')
 class IngestViewSet(viewsets.ViewSet):
+    @action(detail=False, methods=['get'])
+    def health(self, request):
+        return Response({"status": "healthy"}, status=status.HTTP_200_OK)
+
     @action(detail=False, methods=['post'])
     def trigger(self, request):
         try:
