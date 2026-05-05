@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# Move to backend directory if running from root
+if [ -d "backend" ]; then
+    cd backend
+fi
+
 # Wait for database to be ready (Only in local docker-compose)
 if [ -n "$DATABASE_URL" ]; then
   echo "Using DATABASE_URL for connection"
@@ -20,6 +25,10 @@ python manage.py migrate
 echo "Checking for existing data..."
 if [ "$(python manage.py shell -c 'from companies.models import Company; print(Company.objects.count())')" = "0" ]; then
     echo "Empty database detected. Running initial data ingestion..."
+    # Run ETL pipeline first
+    python ../etl/01_extract_from_mysql.py
+    python ../etl/02_clean_and_transform.py
+    # Then load into DB
     python manage.py load_financials
     python manage.py seed_missing_data
     python manage.py update_logos
@@ -29,5 +38,9 @@ if [ "$(python manage.py shell -c 'from companies.models import Company; print(C
 fi
 
 # Start server
-echo "Starting server..."
-python manage.py runserver 0.0.0.0:8000
+echo "Starting server on port ${PORT:-8000}..."
+if [ -n "$RAILWAY_ENVIRONMENT" ]; then
+    gunicorn finveda_backend.wsgi:application --bind 0.0.0.0:${PORT:-8000} --workers 3
+else
+    python manage.py runserver 0.0.0.0:8000
+fi
