@@ -1,11 +1,15 @@
 #!/bin/sh
 
-# Wait for database to be ready
-echo "Waiting for postgres..."
-while ! nc -z db 5432; do
-  sleep 0.1
-done
-echo "PostgreSQL started"
+# Wait for database to be ready (Only in local docker-compose)
+if [ -n "$DATABASE_URL" ]; then
+  echo "Using DATABASE_URL for connection"
+else
+  echo "Waiting for local postgres..."
+  while ! nc -z db 5432; do
+    sleep 0.1
+  done
+  echo "PostgreSQL started"
+fi
 
 # Apply database migrations
 echo "Applying migrations..."
