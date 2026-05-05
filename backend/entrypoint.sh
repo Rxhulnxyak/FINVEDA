@@ -1,8 +1,8 @@
 #!/bin/sh
 
-# Move to backend directory if running from root
-if [ -d "backend" ]; then
-    cd backend
+# Move to backend directory
+if [ -d "/app/backend" ]; then
+    cd /app/backend
 fi
 
 # Wait for database to be ready (Only in local docker-compose)
