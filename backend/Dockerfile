@@ -2,8 +2,8 @@
 FROM python:3.10-slim
 
 # Set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
 # Set work directory
 WORKDIR /app
@@ -17,11 +17,11 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 COPY . /app/
 
 # Fix Windows line endings and make entrypoint executable
-RUN sed -i 's/\r$//' /app/entrypoint.sh
-RUN chmod +x /app/entrypoint.sh
+RUN sed -i 's/\r$//' /app/backend/entrypoint.sh
+RUN chmod +x /app/backend/entrypoint.sh
 
 # Expose port
 EXPOSE 8000
 
 # Set entrypoint
-ENTRYPOINT ["/app/entrypoint.sh"]
+ENTRYPOINT ["/app/backend/entrypoint.sh"]
